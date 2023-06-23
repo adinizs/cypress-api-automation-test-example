@@ -1,4 +1,8 @@
 pipeline {
+    environment {
+        PATH = "$PATH:/usr/local/bin"
+    }
+    
     agent any
     
     stages{
@@ -14,6 +18,7 @@ pipeline {
         stage('Preparação do ambiente') {
             steps {
                 script{
+                    sh "docker-compose --version"
                     sh "mkdir -p ./allure-results"
                     sh 'docker-compose build'
                 }
