@@ -27,7 +27,7 @@ pipeline {
         stage('Test and Report') {
             steps {
                 echo 'running tests'
-                sh 'docker-compose run --rm qa npx cypress run -e allure=true'
+                sh 'docker-compose run -u 0 --rm qa npx cypress run -e allure=true'
             }
             post {
                 always{
