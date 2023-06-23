@@ -1,5 +1,5 @@
 
-export class RegisterIntegration {
+export class Products {
     postRegisterIntegrationSuccessWithoutLimit() {
         const pure = require('pure-gen');
         const cnpj = pure.document.brazilianCompanyNumber();
@@ -14,6 +14,15 @@ export class RegisterIntegration {
                 "document": cnpj,
                 "email": email
             }
+        }).then((res) => {
+            cy.wrap(res).as('response');
+        })
+    }
+
+    getProducts() {
+        cy.request({
+            method: 'GET',
+            url: `${Cypress.config().baseUrl}/products`,
         }).then((res) => {
             cy.wrap(res).as('response');
         })
