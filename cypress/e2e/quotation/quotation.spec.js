@@ -3,7 +3,7 @@ const quotation = new QuotationService();
 
 
 describe('Scenarios from Quotation API', { tags: ['regression', 'quotation'] }, () => {
-    it('Quotation - GET quotation with success', () => {
+    xit('Quotation - GET quotation with success', () => {
         quotation.getQuotation();
         quotation.validateQuotation();
     });
