@@ -3,7 +3,7 @@ services:
   qa:
       image: qa-automation
       build: .
-      # volumes: 
-      #   - ./cypress/screenshots:/app/cypress/screenshots
-      #   - ./allure-results:/app/allure-results
-      #   - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+      volumes: 
+        - ./cypress/screenshots:/app/cypress/screenshots
+        - ./allure-results:/app/allure-results
+        - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
