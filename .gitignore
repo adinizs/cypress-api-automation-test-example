@@ -1,1 +1,3 @@
 node_modules
+cypress/e2e/products/.DS_Store
+cypress/services/.DS_Store
